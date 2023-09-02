@@ -1,0 +1,974 @@
+Admin.java:
+package cricket;
+
+import java.sql.*; 
+import java.util.*;
+  
+public class Admin extends MainPage {
+	//static String username,pass;
+	void Admin1() throws Exception{
+		
+		Teams t=new Teams();
+		Admin o=new Admin();
+		Task tk=new Task();
+//		LoginPage lp=new LoginPage();
+//		welcome();
+		
+		
+	while(true) {
+		System.out.println("1.Team details");
+		System.out.println("2.Players details");
+		System.out.println("3.Coach details");
+		System.out.println("4.Venue details");
+		System.out.println("5.Match details");
+		System.out.println("6.Exit");
+		int ch=sc.nextInt();
+		switch(ch) {
+		case 1: {
+			//System.out.println("1.");
+				System.out.println("1.Team Insertion");
+				System.out.println("2.Team Deletion");
+				System.out.println("3.Team Updation");
+				System.out.println("4.View Teams");
+				System.out.println("5.Exit");
+				while(true) {
+				int t_ch=sc.nextInt();
+				switch(t_ch) {
+				
+				case 1: {
+					t.insertRecord();
+					o.Admin1();
+					break;
+				}
+				case 2: {
+					t.deleteRecord();
+					o.Admin1();
+					break;
+				}
+				case 3: {
+					t.updateRecord();
+					o.Admin1();
+					break;
+					
+				}
+				case 4: {
+					t.displayRecord();
+					o.Admin1();
+					break;
+				}
+				case 5: {
+					o.Admin1();
+					break;
+				}
+				
+				default: {
+					System.out.println("Enter the Appropriate choice");
+					o.Admin1();
+				}
+				
+				}
+				}
+		}
+		
+		case 2: {
+			//System.out.println("1.");
+				System.out.println("1.PlayerInsertion");
+				System.out.println("2.Player Deletion");
+				System.out.println("3.Player Updation");
+				System.out.println("4.View Players");
+				System.out.println("5.Exit");
+				//exit to main menu
+				while(true) {
+				int t_ch=sc.nextInt();
+				switch(t_ch) {
+				
+				case 1: {
+					t.insertPlayer();
+					o.Admin1();
+					break;
+				}
+				case 2: {
+					t.deletePlayer();
+					o.Admin1();
+					break;
+				}
+				case 3: {
+					t.updatePlayer();
+					o.Admin1();
+					break;
+					
+				}
+				case 4: {
+					t.displayPlayer();
+					o.Admin1();
+					break;
+				}
+				case 5: {
+					o.Admin1();
+					break;
+				}
+				
+				default: {
+					System.out.println("Enter the Appropriate choice");
+					o.Admin1();
+				}
+				
+				}
+				}
+		}
+		
+		case 3: {
+			//System.out.println("1.");
+				System.out.println("1.Coach Insertion");
+				System.out.println("2.Coach Deletion");
+				System.out.println("3.Coach Updation");
+				System.out.println("4.view Coaches");
+				System.out.println("5.Exit");
+				while(true) {
+				int t_ch=sc.nextInt();
+				switch(t_ch) {
+				
+				case 1: {
+					t.insertCoach();
+					o.Admin1();
+					break;
+				}
+				case 2: {
+					t.deleteCoach();
+					o.Admin1();
+					break;
+				}
+				case 3: {
+					t.updateCoach();  ///error input mismatch
+					o.Admin1();
+					break;
+					
+				}
+				case 4: {
+					t.displayCoach();
+					o.Admin1();
+					break;
+				}
+				case 5: {
+					o.Admin1();
+					break;
+				}
+				
+				default: {
+					System.out.println("Enter the Appropriate choice");
+					o.Admin1();
+				}
+				
+				}
+				}
+		}
+		
+		case 4: {
+			//System.out.println("1.");
+				System.out.println("1.Insert Venue");
+				System.out.println("2.View Venue");
+				System.out.println("3.Exit");
+				while(true) {
+				int t_ch=sc.nextInt();
+				switch(t_ch) {
+				
+				case 1: {
+					t.insertVenue();
+					o.Admin1();
+					break;
+				}
+				case 2: {
+					t.displayVenue();
+					o.Admin1();
+					break;
+				}
+				case 3: {
+					o.Admin1();
+					break;
+				}
+				
+				default: {
+					System.out.println("Enter the Appropriate choice");
+					o.Admin1();
+				}
+				}
+				}
+		}
+		
+		case 5: {
+			//System.out.println("1.");
+				System.out.println("1.Match Insertion");
+				System.out.println("2.Match Updation");
+				System.out.println("3.View Matches");
+				System.out.println("4.Exit");
+				while(true) {
+				int t_ch=sc.nextInt();
+				switch(t_ch) {
+				
+				case 1: {
+					t.insertMatch();
+					o.Admin1();
+					break;
+				}
+				case 2: {
+					t.updateMatch();
+					o.Admin1();
+					break;
+				}
+				case 3: {
+					t.displayMatch();
+					o.Admin1();
+					break;
+					
+				}
+				case 4: {
+					o.Admin1();
+					break;
+				}
+				
+				default: {
+					System.out.println("Enter the Appropriate choice");
+					o.Admin1();
+				}
+				
+				}
+				}
+		}
+		
+		case 6: {
+			tk.task1();
+		}
+		
+		default: {
+			System.out.println("Enter the Appropriate choice");
+			o.Admin1();
+		}
+		
+		}
+	}
+	
+	}
+
+	
+
+}
+
+Audience.java:
+
+package cricket;
+
+public class Audience extends Teams{
+	
+	void audience() throws Exception {
+		Teams t=new Teams();
+		Task tas=new Task();
+		Audience au=new Audience();
+		while(true) {
+			System.out.println("1.View Teams");
+			System.out.println("2.View Players");
+			System.out.println("3.View Matches");
+			System.out.println("4.View Venue");
+			System.out.println("5.Exit");
+			int ch=sc.nextInt();
+			switch(ch) {
+			case 1: {
+				t.displayRecord();
+				au.audience();
+				break;
+			}
+			case 2: {
+				t.displayPlayer();
+				au.audience();
+				break;
+			}
+			case 3: {
+				t.displayMatch();
+				au.audience();
+				break;
+			}
+			case 4: {
+				t.displayVenue();
+				au.audience();
+				break;
+			}
+			
+			case 5: {
+				tas.task1();
+			}
+			
+			default: {
+				System.out.println("Enter the Appropriate Choice");
+				au.audience();
+			}
+			
+			}
+			
+		}
+	}
+
+}
+
+Connection1.java:
+
+package cricket;
+
+import java.sql.*;
+public class Connection1 {
+	
+	static Connection con=null;
+	Connection connect() throws Exception{
+		con=DriverManager.getConnection("jdbc:mysql://localhost:3306/cricket","root","root");
+		//System.out.println(con);
+		return con;
+		
+	}
+
+}
+
+MainPage.java:
+
+package cricket;
+import java.sql.*;
+import java.util.*;
+public class MainPage {
+
+	static Scanner sc=new Scanner(System.in);
+	static Connection con = null;
+	static Statement st = null;
+	public static void main(String[] args) throws Exception{
+		// TODO Auto-generated method stub
+		Connection1 ce=new Connection1();
+		con = ce.connect();
+		st = con.createStatement();
+		Task obj=new Task();
+		obj.task1();
+	}
+  
+}
+
+Players.java:
+
+package cricket;
+
+public class Players extends Teams{
+
+	void players() throws Exception {
+		Teams t=new Teams();
+		Players p=new Players();
+		Task tas=new Task();
+		while(true) {
+			System.out.println("1.View Matches");
+			System.out.println("2.View Players");
+			System.out.println("3.Exit");
+			int ch=sc.nextInt();
+			switch(ch) {
+			case 1: {
+				t.displayMatch();
+				p.players();
+				break;
+			}
+			case 2: {
+				t.displayPlayer();
+				p.players();
+				break;
+			}
+			case 3:{
+				tas.task1();
+				break;
+			}
+			
+			default: {
+				System.out.println("Enter the Appropriate Choice");
+				p.players();
+			}
+			
+			}
+			
+		}
+		
+	}
+	
+	
+
+}
+
+Task.java:
+
+package cricket;
+
+import java.util.*;
+import java.sql.*;
+public class Task extends MainPage{
+	Scanner sc=new Scanner(System.in);	
+	
+	void task1() throws Exception{
+		while(true) {
+			
+			
+			System.out	.println("1.Login as Admin");
+			System.out.println("2.Login as Player");
+			System.out.println("3.Login as Audience");
+			System.out.println("4.Exit");
+			
+			Admin a=new Admin();
+			Players p=new Players();
+			Audience au=new Audience();
+			
+			int choice=sc.nextInt();
+			switch(choice) {
+			case 1: {
+				welcome();
+				a.Admin1();
+				break;
+			}
+			case 2: {
+				p.players();
+				break;
+				
+			}
+			case 3: {
+				au.audience();
+				break;
+				
+			}
+			case 4: {
+				System.out.println("Program Exited Successfully");
+				System.exit(0);
+			}
+			default: {
+				System.out.println("Enter the Appropriate choice");
+			}
+			}
+			
+		}
+		
+	}
+	
+	
+	
+	
+	private void login() throws Exception {
+		// TODO Auto-generated method stub
+			System.out.println("Type the username");
+			 username=sc.nextLine();
+			System.out.println("Type your password");
+			 pass=sc.nextLine();
+			String query="Select username from login where password='"+pass+"' and username='"+username+"'";
+			ResultSet res=st.executeQuery(query);
+			boolean b=res.next();
+			if(b) {
+				System.out.println("Logged in successfully");
+			} else {
+				System.out.println("username and password is incorrect");
+				System.out.println("Retry Again!!");
+			welcome();
+			}
+	}
+	
+	
+	
+	private void welcome() throws Exception {
+		// TODO Auto-generated method stub
+		System.out.println("1.Login");
+		//sign up
+		int choice=sc.nextInt();
+		if(choice==1) 
+		{
+			System.out.println("Enter the credentials to login!");
+			sc.nextLine();
+			login();
+			
+		} 
+	}
+
+	static String username,pass;
+ 	
+}
+
+Teams.java:
+
+package cricket;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.*;
+
+
+ 
+public class Teams extends MainPage {
+	Scanner sc=new Scanner(System.in);
+	
+	void insertRecord() throws Exception
+	{
+		System.out.println("Enter the no of records to be inserted");
+		int no_of_records=sc.nextInt();
+		int count=0;
+		for(int i=0;i<no_of_records;i++) 
+		{
+			System.out.println("Enter id");
+			int id=sc.nextInt();
+			sc.nextLine();
+			System.out.println("Enter team name");
+			String name=sc.nextLine();
+			System.out.println("Enter team captain");
+			String cap_name=sc.nextLine();
+			System.out.println("Enter player id");
+			int player_id=sc.nextInt();
+			String query="insert into teams values('"+id+"','"+name+"','"+cap_name+"','"+player_id+"')";
+			count+=st.executeUpdate(query);
+			//select player_id from players where team_id=? and player_name=?
+			
+		}
+		System.out.println("No of rows Inserted : "+count);
+	}
+	
+	void deleteRecord() throws Exception
+	{
+		
+		System.out.println("Enter the no of records to be deleted");
+		int no_of_records=sc.nextInt();
+		int count=0;
+		for(int i=0;i<no_of_records;i++) 
+		{
+			System.out.println("Enter id");
+			int id=sc.nextInt();
+			String q1 = "select * from teams where team_id='"+id+"'";
+			ResultSet rs = st.executeQuery(q1);
+			if(rs.next()==false) {
+				System.out.println("    Enter the appropriate detail    ");
+			} else {
+			sc.nextLine();
+			String query="delete from teams where team_id='"+id+"'";
+			count+=st.executeUpdate(query);
+			//select player_id from players where team_id=? and player_name=?
+			}
+		}
+		System.out.println("No of rows deleted : "+count);
+		
+	}
+	
+	
+	void updateRecord() throws Exception
+	{
+		
+		System.out.println("Enter the no of records to be updated");
+		int no_of_records=sc.nextInt();
+		int count=0;
+		for(int i=0;i<no_of_records;i++) 
+		{
+			System.out.println("Enter id");
+			int id=sc.nextInt();
+			String q1 = "select * from teams where team_id='"+id+"'";
+			ResultSet rs = st.executeQuery(q1);
+			if(rs.next()==false) {
+				System.out.println("    Enter the appropriate detail    ");
+			} else {
+			sc.nextLine();
+			boolean end=true;
+			while(end) {
+				System.out.println("1. Update Name");
+				System.out.println("2. Update Captain");
+				int t_ch=sc.nextInt();
+				sc.nextLine();
+				switch(t_ch) {
+				case 1: {
+					String t_name=sc.nextLine();
+					 //update teams set team_name='csk' where team_id=4;
+					String query="update teams set team_name='"+t_name+"' where team_id='"+id+"'";
+					count+=st.executeUpdate(query);
+					end=false;					
+				}
+				case 2: {
+					String t_cap=sc.nextLine();
+					String query="update teams set t_captain='"+t_cap+"' where team_id='"+id+"'";
+					count+=st.executeUpdate(query);
+					end = false;
+				}
+				}
+				
+			
+			}
+			}
+		}
+		System.out.println("No of rows updated : "+count);
+	}
+	
+	
+	void displayRecord() throws Exception{
+		String query="select * from teams";
+		ResultSet rs=st.executeQuery(query);
+		System.out.println("[Team Id]---[Team Name]---[Team Captain]---[Player ID]");
+		while(rs.next()) {
+//			System.out.println("Team Id: "+rs.getInt(1));
+//			System.out.println("Team Name: "+rs.getString(2));
+//			System.out.println("Team Captain: "+rs.getString(3));
+//			System.out.println("Player Id: "+rs.getInt(4));
+			System.out.println(rs.getInt(1)+"            "+rs.getString(2)+"           "+
+             rs.getString(3)+"            "+rs.getInt(4));
+		}
+		
+	}
+	
+	
+	void insertPlayer() throws Exception
+	{
+		System.out.println("Enter the no of records to be inserted");
+		int no_of_records=sc.nextInt();
+		int count=0;
+		for(int i=0;i<no_of_records;i++) 
+		{
+			System.out.println("Player id");
+			int id=sc.nextInt();
+			sc.nextLine();
+			System.out.println("Enter Player name");
+			String name=sc.nextLine();
+			System.out.println("Enter Player Age");
+			int age=sc.nextInt();
+			System.out.println("Enter Team id");
+			int team_id=sc.nextInt();
+			System.out.println("Enter Skills");
+			sc.nextLine();
+			String skills=sc.nextLine();
+			String query="insert into players values('"+id+"','"+name+"','"+age+"','"+team_id+"','"+skills+"')";
+			count+=st.executeUpdate(query);
+			//select player_id from players where team_id=? and player_name=?
+			
+		}
+		System.out.println("No of rows Inserted : "+count);
+	}
+	
+	
+	void deletePlayer() throws Exception
+	{
+		System.out.println("Enter the no of records to be deleted");
+		int no_of_records=sc.nextInt();
+		int count=0;
+		for(int i=0;i<no_of_records;i++) 
+		{
+			System.out.println("Enter id");
+			int id=sc.nextInt();
+			String q1 = "select * from players where player_id='"+id+"'";
+			ResultSet rs = st.executeQuery(q1);
+			if(rs.next()==false) {
+				System.out.println("    Enter the appropriate detail    ");
+			} else {
+			
+			sc.nextLine();
+			String query="delete from players where player_id='"+id+"'";
+			count+=st.executeUpdate(query);
+			//select player_id from players where team_id=? and player_name=?
+			}
+			
+		}
+		System.out.println("No of rows deleted : "+count);
+	}
+	
+	void updatePlayer() throws Exception
+	{
+		
+		System.out.println("Enter the no of records to be updated");
+		int no_of_records=sc.nextInt();
+		int count=0;
+		for(int i=0;i<no_of_records;i++) 
+		{
+			System.out.println("Enter id");
+			int id=sc.nextInt();
+			String q1 = "select * from players where player_id='"+id+"'";
+			ResultSet rs = st.executeQuery(q1);
+			if(rs.next()==false) {
+				System.out.println("    Enter the appropriate detail    ");
+			} else {
+			sc.nextLine();
+			boolean end=true;
+			while(end) {
+				System.out.println("1. Update Name");
+				System.out.println("2. Update Age");
+				int t_ch=sc.nextInt();
+				sc.nextLine();
+				switch(t_ch) {
+				case 1: {
+					String t_name=sc.nextLine();
+					 //update teams set team_name='csk' where team_id=4;
+					String query="update players set player_name='"+t_name+"' where player_id='"+id+"'";
+					count+=st.executeUpdate(query);
+					end=false;					
+				}
+				case 2: {
+					int age=sc.nextInt();
+					String query="update players set player_age='"+age+"' where player_id='"+id+"'";
+					count+=st.executeUpdate(query);
+					end = false;
+				}
+				}
+				
+			
+			}
+			
+		}
+		}
+		System.out.println("No of rows updated : "+count);
+	}
+	
+	
+	void displayPlayer() throws Exception{
+			
+			String query="select * from players";
+			ResultSet rs=st.executeQuery(query);
+			System.out.println("[Player Id]"+"---"+"[Player Name]"+"---"+"[Player Age]"+"---"+"[Team Id]"+"---"+"[Skills]");
+			while(rs.next()) {
+//				System.out.println("Player ID: "+rs.getInt(1));
+//				System.out.println("Player Name: "+rs.getString(2));
+//				System.out.println("Player Age: "+rs.getInt(3));
+//				System.out.println("Team Id: "+rs.getInt(4));
+//				System.out.println("Skills: "+rs.getString(5));
+				System.out.println(rs.getInt(1)+"              "+rs.getString(2)+"            "+rs.getInt(3)+"             "+rs.getInt(4)+"           "+rs.getString(5));
+			}
+			
+		}
+		
+		
+	void insertCoach() throws Exception
+	{
+		System.out.println("Enter the no of records to be inserted");
+		int no_of_records=sc.nextInt();
+		int count=0;
+		for(int i=0;i<no_of_records;i++) 
+		{
+			System.out.println("Coach id");
+			int id=sc.nextInt();
+			
+			sc.nextLine();
+			System.out.println("Enter Coach name");
+			String name=sc.nextLine();
+			System.out.println("Enter Coach Age");
+			int age=sc.nextInt();
+			System.out.println("Enter Coach date of joining");
+			sc.nextLine();
+			String doj=sc.nextLine();
+			System.out.println("Enter Experience");
+			int exp=sc.nextInt();
+			System.out.println("Team id");
+			int t_id=sc.nextInt();
+			String query="insert into coaches values('"+id+"','"+name+"','"+age+"','"+doj+"','"+exp+"','"+t_id+"')";
+			count+=st.executeUpdate(query);
+			//select player_id from players where team_id=? and player_name=?
+			
+		}
+		System.out.println("No of rows Inserted : "+count);
+	}
+	
+	void deleteCoach() throws Exception
+	{
+		System.out.println("Enter the no of records to be deleted");
+		int no_of_records=sc.nextInt();
+		int count=0;
+		for(int i=0;i<no_of_records;i++) 
+		{
+			System.out.println("Enter id");
+			int id=sc.nextInt();
+			String q1 = "select * from coaches where coach_id='"+id+"'";
+			ResultSet rs = st.executeQuery(q1);
+			if(rs.next()==false) {
+				System.out.println("    Enter the appropriate detail    ");
+			} else {
+			sc.nextLine();
+			String query="delete from coaches where coach_id='"+id+"'";
+			count+=st.executeUpdate(query);
+			//select player_id from players where team_id=? and player_name=?
+			}
+		}
+		System.out.println("No of rows deleted : "+count);
+	}
+	
+	void updateCoach() throws Exception
+	{
+		
+		System.out.println("Enter the no of records to be updated");
+		int no_of_records=sc.nextInt();
+		int count=0;
+		for(int i=0;i<no_of_records;i++) 
+		{
+			System.out.println("Enter id");
+			int id=sc.nextInt();
+			String q1 = "select *from coaches where coach_id='"+id+"'";
+			ResultSet rs = st.executeQuery(q1);
+			if(rs.next()==false) {
+				System.out.println("    Enter the appropriate detail    ");
+			}
+			else {
+			sc.nextLine();
+			boolean end=true;
+			while(end) {
+				System.out.println("1. Update Name");
+				System.out.println("2. Update Age");
+				System.out.println("3. Update Experience");
+				int t_ch=sc.nextInt();
+				sc.nextLine();
+				switch(t_ch) {
+				case 1: {
+					String t_name=sc.nextLine();
+					 //update teams set team_name='csk' where team_id=4;
+					String query="update coaches set coach_name='"+t_name+"' where coach_id='"+id+"'";
+					count+=st.executeUpdate(query);
+					end=false;					
+				}
+				break;
+				case 2: {
+					int age=sc.nextInt();
+					String query="update coaches set coach_age='"+age+"' where coach_id='"+id+"'";
+					count+=st.executeUpdate(query);
+					end = false;
+				}
+				break;
+				case 3: {
+					int exp=sc.nextInt();
+					String query="update coaches set experience='"+exp+"' where coach_id='"+id+"'";
+					count+=st.executeUpdate(query);
+					end = false;
+				}
+				break;
+				}
+				
+			
+			}
+			
+		}
+		System.out.println("No of rows updated : "+count);
+		}
+	}
+	
+	void displayCoach() throws Exception{
+		
+		String query="select * from coaches";
+		ResultSet rs=st.executeQuery(query);
+		while(rs.next()) {
+			System.out.println("Coach Id: "+rs.getInt(1));
+			System.out.println("Coach Name: "+rs.getString(2));
+			System.out.println("Coach Age: "+rs.getInt(3));
+			System.out.println("Coach Date_of_Joining: "+rs.getString(4));
+			System.out.println("Experience: "+rs.getInt(5)+"years"); 
+			System.out.println("Team Id: "+rs.getInt(6));
+		}
+		
+	}
+	
+	
+	void insertVenue() throws Exception
+	{
+		System.out.println("Enter the no of records to be inserted");
+		int no_of_records=sc.nextInt();
+		int count=0;
+		sc.nextLine();
+		for(int i=0;i<no_of_records;i++) 
+		{
+			System.out.println("Enter Venue Name");
+			String v_name=sc.nextLine();
+			System.out.println("Enter Venue Location");
+			String v_loc=sc.nextLine();
+			System.out.println("Enter No Of Seats in venue");
+			int seats=sc.nextInt();
+			System.out.println("Enter Stand No");
+			int s_no=sc.nextInt();
+			System.out.println("Enter Ticket Price");
+			int price=sc.nextInt();
+			String query="insert into venue values('"+v_name+"','"+v_loc+"','"+seats+"','"+s_no+"','"+price+"')";
+			count+=st.executeUpdate(query);
+			//select player_id from players where team_id=? and player_name=?
+			
+		}
+		System.out.println("No of rows Inserted : "+count);
+	}
+	
+	void displayVenue() throws Exception{
+			
+			String query="select * from venue";
+			ResultSet rs=st.executeQuery(query);
+			while(rs.next()) {
+				System.out.println("Venue Name: "+rs.getString(1));
+				System.out.println("Location: "+rs.getString(2));
+				System.out.println("Number of Seats: "+rs.getInt(3));
+				System.out.println("Stand Number: "+rs.getInt(4));
+				System.out.println("Ticket Price: "+rs.getInt(5));
+			}
+			
+		}
+		
+	void insertMatch() throws Exception
+	{
+		System.out.println("Enter the no of records to be inserted");
+		int no_of_records=sc.nextInt();
+		int count=0;
+		sc.nextLine();
+		for(int i=0;i<no_of_records;i++) 
+		{
+			System.out.println("Enter Match Name");
+			String m_name=sc.nextLine();
+			System.out.println("Enter Match Date");
+			String m_date=sc.nextLine();
+			System.out.println("Enter Winning Team");
+			String name=sc.nextLine();
+			System.out.println("Enter Winning Team id");
+			int s_no=sc.nextInt();
+			System.out.println("Enter Winning score");
+			int score=sc.nextInt();
+			String query="insert into matches values('"+m_name+"','"+m_date+"','"+name+"','"+s_no+"','"+score+"')";
+			count+=st.executeUpdate(query);
+			//select player_id from players where team_id=? and player_name=?
+			
+		}
+		System.out.println("No of rows Inserted : "+count);
+	}
+	
+	void updateMatch() throws Exception
+	{
+		
+		System.out.println("Enter the no of records to be updated");
+		int no_of_records=sc.nextInt();
+		int count=0;
+		sc.nextLine();
+		for(int i=0;i<no_of_records;i++) 
+		{
+			System.out.println("Enter name");
+			String name=sc.nextLine();
+			String q1 = "select * from matches where match_name='"+name+"'";
+			ResultSet rs = st.executeQuery(q1);
+			if(rs.next()==false) {
+				System.out.println("    Enter the appropriate detail    ");
+			} else {
+			boolean end=true;
+			while(end) {
+				System.out.println("Enter Score");
+				int score=sc.nextInt();
+					 //update teams set team_name='csk' where team_id=4;
+					String query="update matches set score='"+score+"' where match_name='"+name+"'";
+					count+=st.executeUpdate(query);
+					end=false;					
+				}
+				
+			
+			}
+		}
+		System.out.println("No of rows updated : "+count);
+	}
+
+	
+	void displayMatch() throws Exception{
+		
+		String query="select * from matches";
+		ResultSet rs=st.executeQuery(query);
+		System.out.println("[Match Name]---[Match Date]---[Winning Team]---[Winning Score]");
+		while(rs.next()) {
+//			System.out.println("Match Name: "+rs.getString(1));
+//			System.out.println("Match Date: "+rs.getString(2));
+//			System.out.println("Winning Team Name: "+rs.getString(3));
+//			System.out.println("Winning Score: "+rs.getInt(4));
+			System.out.println(rs.getString(1)+"            "+rs.getString(2)+"      "+
+             rs.getString(3)+"             "+rs.getInt(4));
+		}
+		
+	}
+	
+	
+}
+
